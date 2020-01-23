@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import nltk
 import codecs
 import sqlite3
@@ -9,7 +10,7 @@ from nltk.corpus.reader.api import CategorizedCorpusReader
 
 CAT_PATTERN = r'([a-z_\s]+)/.*'
 DOC_PATTERN = r'(?!\.)[a-z_\s]+/[a-f0-9]+\.json'
-TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'p', 'li']
+TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'li']
 
 class HTMLCorpusReader(CategorizedCorpusReader, CorpusReader):
     """
